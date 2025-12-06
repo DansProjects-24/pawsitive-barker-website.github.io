@@ -91,7 +91,7 @@ header .hero-text p {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  flex-wrap: nowrap;  /* prevent stacking */
+  flex-wrap: wrap;  /* prevent stacking */
   flex-shrink: 1;     /* allow items to shrink on small screens */
 }
 
