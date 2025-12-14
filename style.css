@@ -89,21 +89,24 @@ header p {
 /* ---------------------------- */
 /* Navbar Styling               */
 /* ---------------------------- */
+/* Navbar container */
 .navbar {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 999;
+  padding: 10px 0;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 10px 0;
+  gap: 50px;          /* default gap between items */
+  padding: 0;
   margin: 0;
+  flex-wrap: nowrap;   /* prevent wrapping */
 }
 
 .navbar ul li a {
@@ -111,8 +114,10 @@ header p {
   font-weight: 600;
   color: #111;
   padding: 8px 12px;
-  transition: background 0.3s, color 0.3s;
   border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap; /* ensure text stays on one line */
+  font-size: clamp(0.8rem, 2vw, 1rem); /* scales with viewport */
 }
 
 .navbar ul li a:hover {
@@ -120,8 +125,19 @@ header p {
   color: #fff;
 }
 
+/* Smooth scrolling */
 html {
-  scroll-behavior: smooth; /* Smooth Scroll     */
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments for very narrow screens */
+@media (max-width: 600px) {
+  .navbar ul {
+    gap: 20px;        /* smaller gap on small screens */
+  }
+  .navbar ul li a {
+    padding: 6px 8px; /* reduce padding to fit better */
+  }
 }
 
 
@@ -161,7 +177,7 @@ html {
   gap: 20px;
   list-style: none;
   padding: 0;
-  margin: 20px 0 0 0;
+  margin: 2px 0 0 0;
   font-weight: 700;
   font-size: 1.05rem;
   color: #111;
@@ -181,6 +197,14 @@ html {
   top: 0;
   color: #111;
 }
+
+/* Mobile adjustments for intro-inner */
+@media (max-width: 800px) {
+  .intro-inner {
+    gap: 0; /* remove horizontal/vertical gap on narrow screens */
+  }
+}
+
 
 /* ---------------------------- */
 /* Services Section             */
