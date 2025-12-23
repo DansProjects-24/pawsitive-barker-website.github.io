@@ -18,7 +18,7 @@ body {
 /* Section Base Styling         */
 /* ---------------------------- */
 section {
-  padding: 60px 20px;
+  padding: 30px 20px;
   max-width: 1500px;
   margin: auto;
   text-align: center;
@@ -96,7 +96,7 @@ header p {
   position: sticky;
   top: 0;
   z-index: 999;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 .navbar ul {
@@ -131,12 +131,12 @@ html {
 }
 
 /* Responsive adjustments for very narrow screens */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .navbar ul {
-    gap: 20px;        /* smaller gap on small screens */
+    gap: 5px;        /* smaller gap on small screens */
   }
   .navbar ul li a {
-    padding: 6px 8px; /* reduce padding to fit better */
+    padding: 5px 5px; /* reduce padding to fit better */
   }
 }
 
@@ -145,7 +145,7 @@ html {
 /* Intro Section with image     */
 /* ---------------------------- */
 .intro {
-  padding: 50px 100px;
+  padding: 50px 10px;
 }
 
 .intro-inner {
@@ -200,9 +200,16 @@ html {
 
 /* Mobile adjustments for intro-inner */
 @media (max-width: 800px) {
-  .intro-inner {
-    gap: 0; /* remove horizontal/vertical gap on narrow screens */
-  }
+	.intro {
+		padding: 10px 5px;
+	}
+	.intro-inner {
+		gap: 0; /* remove horizontal/vertical gap on narrow screens */
+	}
+	
+  .intro-inner { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .intro-text { text-align: center; }
+  .intro-image img { width: 150px; height: 150px; }
 }
 
 
@@ -365,13 +372,9 @@ footer {
 /* ---------------------------- */
 /* Responsive Tweaks            */
 /* ---------------------------- */
-@media (max-width: 800px) {
-  .intro-inner { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-  .intro-text { text-align: center; }
-  .intro-image img { width: 150px; height: 150px; }
-}
 
-@media (max-width: 600px) {
+
+@media (max-width: 800px) {
   header h1 { font-size: 2.3rem; }
   header p { font-size: 1.1rem; }
   .service-item { padding: 20px; }
