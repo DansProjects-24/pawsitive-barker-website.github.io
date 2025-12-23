@@ -86,6 +86,12 @@ header p {
     0 4px 12px rgba(0,0,0,0.6);
 }
 
+/* Responsive adjustments for very narrow screens */
+@media (max-width: 800px) {
+	header {
+	  padding: 50px 10px; /* Reduce padding on smaller screens*/	}
+}
+
 /* ---------------------------- */
 /* Navbar Styling               */
 /* ---------------------------- */
