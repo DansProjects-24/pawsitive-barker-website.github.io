@@ -10,6 +10,7 @@
 
 	  gtag('config', 'G-S0NBHL56VS');
 	</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -41,7 +42,7 @@
 			<li><a href="#about">About Me</a></li>
 			<li><a href="#services">Our Services</a></li>
 			<li><a href="#contact">Contact</a></li>
-			<li><a href="#info">Info</a></li>
+			<!-- <li><a href="#info">Info</a></li> -->
 			<li><a href="#gallery">Gallery</a></li>
 		</ul>
 	</nav>
@@ -104,6 +105,13 @@
 			Reliable, friendly care when you can’t be there.
 		  </p>
 		</div>
+		<div class="service-item">
+		  <h3><i class="fa-solid fa-mountain-sun"></i>Adventure Days</h3>
+		  <p>
+			Extra-special outings for dogs who love a bigger adventure!  
+			From sand barn play sessions and safe swimming to exciting beach trips, these days are all about exploring, enrichment, and having fun with friends.
+		  </p>
+		</div>
 	  </div>
 	</section>
 	
@@ -128,7 +136,7 @@
 	  </div>
 	</section>
 	
-	<section class="info" id="info">
+<!-- 	<section class="info" id="info">  <!--Section removed 08/03/2026>
 	  <h2>Further Information</h2>
 	  <p>Here you can find documents with more details about our services, pricing, and policies:</p>
 	  <div class="downloads">
@@ -147,25 +155,59 @@
 		</a> -->
 				<!-- 		<a href="docs/test.pdf" target="_blank">
 		  <i class="fa-solid fa-file"></i> Price Increase Notice
-		</a> -->
-	</section>
+		</a> 
+	</section> -->
 	
-  <section class="gallery" id="gallery">
-    <h2>Happy Dogs!</h2>
-    <div class="image-grid">
-      <img src="images\dogs1.jpg" alt="Dog 1" />
-      <img src="images\dogs2.jpg" alt="Dog 2" />
-      <img src="images\dogs3.jpg" alt="Dog 3" />
-      <img src="images\dogs4.jpg" alt="Dog 4" />
-	  <img src="images\dogs5.jpg" alt="Dog 5" />
-	  <img src="images\dogs6.jpg" alt="Dog 6" />
-	  <img src="images\dogs7.jpg" alt="Dog 7" />
-	  <img src="images\dogs8.jpg" alt="Dog 8" />
-    </div>
-  </section>
+	<section class="gallery" id="gallery">
+		<h2>Happy Dogs!</h2>
+		<div class="image-grid" id="dog-gallery"></div>
+		</div>
+	</section>
 
-  <footer>
-    &copy; 2025 Pawsitive Barker. All rights reserved.
-  </footer>
+	<footer>
+	&copy; 2026 Pawsitive Barker. All rights reserved.
+	</footer>
+  
+	<!-- Lightbox -->
+	<div id="lightbox">
+		<span id="close-lightbox">&times;</span>
+		<img id="lightbox-img" src="" alt="Expanded dog photo">
+	</div>
+	
+	<script>
+		const gallery = document.getElementById("dog-gallery");
+
+		for (let i = 1; i <= 30; i++) {
+		  const img = document.createElement("img");
+		  img.src = `images/dogs${i}.jpg`;
+		  img.alt = `Dog ${i}`;
+		  img.loading = "lazy";   //Lazy loading to make it quicker
+		  gallery.appendChild(img);
+		}
+	</script>
+	
+	<script>
+		const lightbox = document.getElementById("lightbox");
+		const lightboxImg = document.getElementById("lightbox-img");
+		const closeBtn = document.getElementById("close-lightbox");
+
+		document.addEventListener("click", function(e) {
+		  if (e.target.matches(".image-grid img")) {
+			lightbox.style.display = "flex";
+			lightboxImg.src = e.target.src;
+		  }
+		});
+
+		closeBtn.onclick = function() {
+		  lightbox.style.display = "none";
+		};
+
+		lightbox.onclick = function(e) {
+		  if (e.target !== lightboxImg) {
+			lightbox.style.display = "none";
+		  }
+		};
+	</script>
+  
 </body>
 </html>
