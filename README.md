@@ -1,2 +1,2 @@
 # pawsitive-barker-website
-Repo cotntaining pawsitivebarker.co.uk website files
+Repo containing pawsitivebarker.co.uk website files
